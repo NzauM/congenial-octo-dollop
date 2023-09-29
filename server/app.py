@@ -1,14 +1,14 @@
-from setup import app,db
+from server.setup import app,db
 from flask_restful import Resource, Api
-from models import Book, Author, User
+from server.models import Book, Author, User
 from flask import jsonify,make_response, session, request
 
 api = Api(app)
-@app.before_request
-def check_valid_user():
-    print(session.get('random_user'))
-    if not session.get('random_user') and request.endpoint != 'sign_up':
-        return {"message":"You cannot access this route"}, 403
+# @app.before_request
+# def check_valid_user():
+#     print(session.get('random_user'))
+#     if not session.get('random_user') and request.endpoint != 'sign_up':
+#         return {"message":"You cannot access this route"}, 403
 @app.route('/')
 def home():
     return {"hello":"Welcome to my api"}

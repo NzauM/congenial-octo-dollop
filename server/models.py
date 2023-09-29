@@ -1,7 +1,7 @@
 # from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.hybrid import hybrid_property
-from setup import bcrypt,db
+from server.setup import bcrypt,db
 
 # db = SQLAlchemy()
 class Book(db.Model, SerializerMixin):

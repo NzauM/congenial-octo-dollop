@@ -10,6 +10,11 @@ sqlalchemy-serializer = "*"
 flask-sqlalchemy = "*"
 faker = "*"
 flask-restful = "*"
+python-dotenv = "*"
+gunicorn = "*"
+flask-bcrypt = "*"
+psycopg2-binary = "*"
+honcho = "*"
 
 [dev-packages]
 

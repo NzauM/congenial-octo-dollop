@@ -1,14 +1,19 @@
-
+import os
 from flask import Flask
 from flask_migrate import Migrate
 # from models import db, Book, Author
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
 
-app = Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///booksapp2.db'
+
+app = Flask(__name__,static_url_path='',static_folder='../client/dist', template_folder='../client/dist')
+
+load_dotenv()
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
+print()
 
 db = SQLAlchemy()
 migrate = Migrate(app, db)
